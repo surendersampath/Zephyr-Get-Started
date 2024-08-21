@@ -14,3 +14,7 @@ Checklist for the project :
  - [ ] 3. Add sample board support for ESP32/S3 and Nordic.
  - [ ] 4. Github CodeSpace support.
  - [ ] 5. CI/CD Runner to Download Executables.
+
+
+west init 
+west update
