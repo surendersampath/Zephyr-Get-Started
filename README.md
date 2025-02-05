@@ -24,5 +24,6 @@ Use the following commands
 foo@bar:~$ cd app
 foo@bar:~$ west build -b qemu_x86
 foo@bar:~$ west build -t run
+```
 
 ![alt text](images/image.png)
