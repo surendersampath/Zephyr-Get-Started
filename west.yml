@@ -1,0 +1,14 @@
+manifest:
+  version: 0.13
+
+  remotes:
+    - name: zephyr
+      url-base: https://github.com/zephyrproject-rtos
+
+  projects:
+    - name: zephyr
+      revision: main   # Change this to a specific Zephyr version if needed
+      import: true     # This tells `west` to fetch all Zephyr modules
+
+  self:
+    path: app  # This sets your app directory as the current workspace
