@@ -1,3 +1,44 @@
 {
-    "image": "ghcr.io/zephyrproject-rtos/zephyr-build:latest"
+	"dockerFile": "Dockerfile",
+	"build": {
+        "args": {
+            "WORKDIR" : "workspaces",
+            // "TARGET" : "stm32",
+            "TOOLCHAIN" : "arm-zephyr-eabi",
+            "ZSDK_VERSION" : "0.16.8",
+            "ZEPHYR_VERSION" : "3.6.0"
+        }
+    },
+	"remoteUser": "user",
+
+     // The optional 'runArgs' property can be used to specify additional runtime arguments.
+     "runArgs": [
+        "-v", "/dev:/dev",  //
+        "--privileged"      // allows access to tty* devices
+    ],
+
+    // paths in Dockerfile are relative to this, hence the parent folder
+    "context": "../",
+
+	"containerEnv": { "ZEPHYR_BASE": "${containerWorkspaceFolder}/zephyr" },
+
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            "settings": {
+                // core
+                "terminal.integrated.defaultProfile.linux": "bash",
+            },
+            "extensions": [
+                // core
+                "ms-vscode.cmake-tools",
+                "ms-azuretools.vscode-docker",
+                // zephyr
+                "circuitdojo.zephyr-tools",
+                // editing
+                "stkb.rewrap",
+                "wayou.vscode-todo-highlight"
+            ]
+        }
+    } 
 }
