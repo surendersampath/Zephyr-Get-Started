@@ -5,7 +5,7 @@
             "WORKDIR" : "workspaces",
             // "TARGET" : "stm32",
             "TOOLCHAIN" : "arm-zephyr-eabi",
-            "ZSDK_VERSION" : "0.16.8",
+            // "ZSDK_VERSION" : "0.16.3",
             "ZEPHYR_VERSION" : "3.6.0"
         }
     },

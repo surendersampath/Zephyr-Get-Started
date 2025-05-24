@@ -12,7 +12,7 @@ USER user
 
 RUN sudo apt update 
 RUN sudo apt upgrade -y
-
+RUN sudo apt-get install -y qemu-system-x86
 RUN sudo -E -- bash -c ' \
 	/opt/toolchains/zephyr-sdk-${ZSDK_VERSION}/setup.sh -c && \
 	chown -R user:user /home/user/.cmake \
