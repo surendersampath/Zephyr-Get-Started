@@ -2,4 +2,4 @@ build/
 
 bootloader/
 
-modules/
+/modules/*

@@ -1,6 +1,8 @@
 {
     "C_Cpp.default.compilerPath": "",
     "files.associations": {
-        "kernel.h": "c"
+        "kernel.h": "c",
+        "random.h": "c",
+        "say_hello.h": "c"
     }
 }

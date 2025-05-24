@@ -14,7 +14,7 @@ Feature list of this project :
  - [x] 1. Set up a "hello world" to build for QEMU using west. 
  - [x] 2. Able to run a simple hello world on QEMU using west.
  - [ ] 3. Add sample board support for ESP32/S3 or STM32. Nordic has plenty of online resources already.
- - [ ] 4. Github CodeSpace support.
+ - [x] 4. Github CodeSpace support.
  - [ ] 5. CI/CD Runner to Download Executables.
 
 ## Running Hello World in QEMU
