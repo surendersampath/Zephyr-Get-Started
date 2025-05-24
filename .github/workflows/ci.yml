@@ -1,0 +1,40 @@
+name: Zephyr CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for west to determine Zephyr version
+          submodules: 'recursive' # Fetch west submodules
+
+      - name: Set up Zephyr tools
+        uses: zephyrproject-rtos/action-setup-zephyr-sdk@v1
+        with:
+          sdk-version: '0.16.5' # Specify a recent, stable SDK version
+
+      - name: Install west
+        run: pip3 install west
+
+      - name: Zephyr Dependencies
+        run: |
+          west update
+          pip3 install -r zephyr/scripts/requirements.txt
+
+      - name: Build the application
+        run: |
+          west build -p auto -b native_sim app -d build_native_sim
+
+      - name: Run tests
+        run: |
+          west build -t run -d build_native_sim
